@@ -112,6 +112,75 @@ video {
   border: 1px solid rgba(130, 144, 178, 0.2);
 }
 
+.image-section {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(130, 144, 178, 0.25);
+  border-radius: 18px;
+  background: rgba(10, 20, 36, 0.9);
+}
+
+.image-section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.image-controls {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.image-controls label {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.image-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-bottom: 1.5rem;
+}
+
+.image-grid img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0a1220;
+  border-radius: 18px;
+  border: 1px solid rgba(130, 144, 178, 0.2);
+  object-fit: contain;
+}
+
+.image-grid h3 {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
+  color: #8da1c7;
+}
+
+.image-status {
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(15, 25, 41, 0.95);
+  color: #cbd5e1;
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.image-status.loading {
+  color: #10b981;
+}
+
+.image-status.error {
+  color: #f87171;
+}
+
+.image-status.success {
+  color: #10b981;
+}
+
 .status-panel {
   padding: 1.5rem;
   border: 1px solid rgba(130, 144, 178, 0.25);

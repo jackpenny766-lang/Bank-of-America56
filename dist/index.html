@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Decart Realtime Webcam Demo</title>
-    <script type="module" crossorigin src="/assets/index-BJQHiE7-.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-C08CBsEd.css">
+    <script type="module" crossorigin src="/assets/index-DgKP5cV7.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Cj_Sw-1t.css">
   </head>
   <body>
     <div class="app-shell">
@@ -61,6 +61,28 @@
           <h2>Transformed remote stream</h2>
           <video id="remoteVideo" autoplay playsinline></video>
         </div>
+      </section>
+
+      <section class="image-section">
+        <h2>Image Transformation</h2>
+        <div class="image-controls">
+          <label>
+            Upload Image
+            <input id="imageUpload" type="file" accept="image/*" />
+          </label>
+          <button id="processImageButton" disabled>Process Image</button>
+        </div>
+        <div class="image-grid">
+          <div>
+            <h3>Original</h3>
+            <img id="originalImage" alt="Original image" />
+          </div>
+          <div>
+            <h3>Transformed</h3>
+            <img id="transformedImage" alt="Transformed image" />
+          </div>
+        </div>
+        <div id="imageStatus" class="image-status"></div>
       </section>
 
       <section class="status-panel">
