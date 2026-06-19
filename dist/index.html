@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decart Realtime Webcam Demo</title>
+    <script type="module" crossorigin src="/assets/index-CFFBoDiW.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-5OAxV_wz.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header>
+        <h1>Decart Realtime Webcam Demo</h1>
+        <p>Use your webcam with Decart's realtime transformation SDK.</p>
+      </header>
+
+      <section class="controls">
+        <label>
+          API Key
+          <input id="apiKey" type="password" placeholder="Enter Decart API key" />
+        </label>
+
+        <label>
+          Model
+          <select id="modelSelect">
+            <option value="lucy-restyle-2">lucy-restyle-2</option>
+            <option value="lucy-style-1">lucy-style-1</option>
+            <option value="lucy-style-2">lucy-style-2</option>
+          </select>
+        </label>
+
+        <label class="checkbox">
+          <input id="mirrorToggle" type="checkbox" /> Mirror front camera
+        </label>
+
+        <label>
+          Prompt
+          <input id="promptInput" type="text" placeholder="e.g. Anime, Cyberpunk city" value="Anime" />
+        </label>
+
+        <div class="button-row">
+          <button id="connectButton">Connect</button>
+          <button id="disconnectButton" disabled>Disconnect</button>
+        </div>
+        <label>
+          Session duration (minutes)
+          <input id="sessionDurationInput" type="number" min="1" max="240" value="60" />
+        </label>
+      </section>
+
+      <section class="video-grid">
+        <div>
+          <h2>Local camera</h2>
+          <video id="localVideo" autoplay muted playsinline></video>
+        </div>
+        <div>
+          <h2>Transformed remote stream</h2>
+          <video id="remoteVideo" autoplay playsinline></video>
+        </div>
+      </section>
+
+      <section class="status-panel">
+        <div><strong>Status:</strong> <span id="statusText">idle</span></div>
+        <div><strong>Connection quality:</strong> <span id="qualityText">n/a</span></div>
+        <div><strong>Limiting factor:</strong> <span id="factorText">n/a</span></div>
+        <div><strong>Session time left:</strong> <span id="sessionTime">00:00:00</span></div>
+        <div><strong>Debug log:</strong> <pre id="logOutput">Ready.</pre></div>
+      </section>
+    </div>
+
+  </body>
+</html>
