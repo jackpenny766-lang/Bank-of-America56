@@ -14,6 +14,8 @@ const logOutput = document.getElementById('logOutput');
 const localVideo = document.getElementById('localVideo');
 const remoteVideo = document.getElementById('remoteVideo');
 const sessionTimeSpan = document.getElementById('sessionTime');
+const hideDebugCheckbox = document.getElementById('hideDebug');
+const statusPanel = document.querySelector('.status-panel');
 
 let localStream = null;
 let realtimeClient = null;
@@ -33,6 +35,7 @@ function getSessionDurationMs() {
 
 function appendLog(message) {
   const timestamp = new Date().toLocaleTimeString();
+  // avoid leaking sensitive values; do not log API key anywhere
   logOutput.textContent += `[${timestamp}] ${message}\n`;
   logOutput.scrollTop = logOutput.scrollHeight;
 }
@@ -182,6 +185,17 @@ async function disconnectRealtime() {
 
 connectButton.addEventListener('click', () => connectRealtime());
 disconnectButton.addEventListener('click', () => disconnectRealtime());
+
+// hide/show status panel for privacy
+if (hideDebugCheckbox && statusPanel) {
+  const setHidden = () => {
+    if (hideDebugCheckbox.checked) statusPanel.classList.add('hidden');
+    else statusPanel.classList.remove('hidden');
+  };
+  hideDebugCheckbox.addEventListener('change', setHidden);
+  // initialize
+  setHidden();
+}
 
 window.addEventListener('beforeunload', async () => {
   await disconnectRealtime();

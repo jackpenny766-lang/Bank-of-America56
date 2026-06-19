@@ -132,3 +132,8 @@ pre {
   max-height: 180px;
   overflow: auto;
 }
+
+/* utility to hide debug/status UI */
+.hidden {
+  display: none !important;
+}
