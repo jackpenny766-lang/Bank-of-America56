@@ -6,7 +6,7 @@ const promptInput = document.getElementById('promptInput');
 const mirrorToggle = document.getElementById('mirrorToggle');
 const connectButton = document.getElementById('connectButton');
 const disconnectButton = document.getElementById('disconnectButton');
-const sessionDurationInput = document.getElementById('sessionDurationInput');
+const sessionDurationInput = document.getElementById('sessionDuration');
 const statusText = document.getElementById('statusText');
 const qualityText = document.getElementById('qualityText');
 const factorText = document.getElementById('factorText');
@@ -129,7 +129,7 @@ async function connectRealtime() {
       updateSessionTime();
       sessionInterval = setInterval(updateSessionTime, 1000);
       sessionTimer = setTimeout(async () => {
-        appendLog('Session reached 1 hour; disconnecting automatically.');
+        appendLog('Session reached configured duration; disconnecting automatically.');
         await disconnectRealtime();
       }, durationMs);
     } catch (e) {
